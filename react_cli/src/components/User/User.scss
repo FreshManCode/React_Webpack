@@ -1,0 +1,40 @@
+.userItem {
+    background-color: "#f5f5f5";
+    padding: 5px;
+}
+
+.container {
+    position: relative;
+    .bgImg {
+        width: 100%;
+    }
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .name {
+        position: absolute;
+        top: 15px;
+        left: 65px;
+    }
+
+    .catid {
+        position: absolute;
+        top: 40px;
+        left: 65px;
+    }
+
+    .content {
+        position: absolute;
+        left: 20px;
+        top: 70px;
+        text-align: center;
+        right: 20px;
+    }
+
+}

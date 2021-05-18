@@ -12,7 +12,8 @@ export default function configureStore(preloadedState) {
     const enhancers = [middlewareEnhancer];
     const composedEnhancers = compose(...enhancers);
 
-    //创建存储容器
+    //创建存储容器 (createStore 接受Reducer作为参数,生成一个新的Store.以后每当store.dispatch发送过来一个新的Action.
+    // 就会自动调用Reducer,得到新的State)
     const store = createStore(rootReducer,preloadedState,composedEnhancers);
     // 配置saga
     sagaMiddleware.run(rootSaga);

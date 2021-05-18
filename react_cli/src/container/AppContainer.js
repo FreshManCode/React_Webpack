@@ -9,12 +9,27 @@ class AppContainer extends Component {
         super(props)
         this.state = {}
     }
+
+    componentDidMount() {
+        const { store } = this.props
+        console.log('myStore is:', store);
+        store.subscribe(() => {
+            let storeState = store.getState()
+            this.setState({
+                loading: storeState.pageLoadingVal
+            })
+        })
+    }
+
+
+
     render() {
         const { store } = this.props;
+        console.log('AppContainer store is:',store,'||:',store.getState(),'value :',store.getState().XMLHttp);
         return (
             <Provider store={store}>
                 <Router>
-                    <AppLayout />
+                    <AppLayout isMyLoading={store.getState().XMLHttp.pageLoadingVal} />
                 </Router>
             </Provider>
         );

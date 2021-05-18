@@ -7,7 +7,6 @@ import createLogger from 'redux-logger'
 import reducer from '../../reducers/reducer1'
 // 引入connect函数
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom';
 import Header from '../../components/Header'
 
 

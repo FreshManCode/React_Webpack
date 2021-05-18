@@ -13,4 +13,14 @@ export const Menus = [
  */
 export const LearnItems = [
     { name: "Redux中间键", path: "/ReduxMiddleWare", key: "ReduxMiddleWare" },
+    { name: "XMLHttp", path: "/XMLHttp", key: "XMLHttp" },
+    { name: "Axios", path: "/Axios", key: "Axios" },
 ];
+
+
+/**
+ * 获取到文章列表假数据，共 100 条
+ */
+export const ListURL = 'http://jsonplaceholder.typicode.com/posts';
+
+export const AxiosURL = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20';
