@@ -6,36 +6,58 @@ import UserItem from '../../../components/User/User'
 import _ from 'lodash'
 
 
-
+ 
 
 class Axios extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            loadComponent: true,
+        }
+    }
+
+
     componentDidMount() {
         console.log('1111');
     }
+
+    unloadComponent = () => {
+        this.setState({
+            loadComponent:!this.state.loadComponent
+        })
+    }
+
     axiosRequest = () => {
         this.props.dispatch({ type: "AXIOS_REQUEST" })
     }
 
-    didClick=(item,index)=>{
-        console.log("item is:",item,'index is:',index)
+    didClick = (item, index) => {
+        console.log("item is:", item, 'index is:', index)
     }
     render() {
-
+        // 不渲染组件
+        if (!this.state.loadComponent) {
+            return null
+        }
         const data = _.get(this.props, 'Axios.res.result')
         return (
+
             <div className={style.axios}>
                 {
-                    data && data.length > 0 && data.map((item,index) => {
-                       return <UserItem  
-                       key={index} 
-                       name={item.username} 
-                       id={item.aid} 
-                       title={item.title} 
-                       didClick={()=>{this.didClick(item,index)}}/>
+                    data && data.length > 0 && data.map((item, index) => {
+                        return <UserItem
+                            key={index}
+                            name={item.username}
+                            id={item.aid}
+                            title={item.title}
+                            didClick={() => { this.didClick(item, index) }} />
                     })
                 }
                 <Button className={style.centerButton} onClick={this.axiosRequest}>
                     AxiosRequest
+                </Button>
+                <Button className={style.centerButton} onClick={this.unloadComponent}>
+                    不渲染组件
                 </Button>
 
             </div>

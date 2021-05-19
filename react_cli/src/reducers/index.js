@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
+
 import ReduxMiddleWare from './ReduxMiddleWare'
-import Reducer1 from './reducer1'
+import SagaReucer from './SagaReducer'
 import XMLHttp from './XMLHttp'
 import Axios from './AxiosReq'
 
@@ -9,8 +10,8 @@ import Axios from './AxiosReq'
 //并将返回结果合并成一个大的State对象 
 // Connect 函数中的相关配置
 export default combineReducers({
+    sagaReucer: SagaReucer,
     middle: ReduxMiddleWare,
-    reduver1: Reducer1,
     XMLHttp:XMLHttp,
     Axios:Axios,
 })

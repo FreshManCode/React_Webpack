@@ -11,10 +11,12 @@ const AxiosReducer = (state = initState, action) => {
     console.log('AxiosReducer:', state, "action is:", action);
     switch (action.type) {
         case "AXIOS_REQUEST_SUCCESS": {
-            newState.res = action.res            
+            newState.res = action.res 
+            break;           
         }
         case "AXIOS_REQUEST_FAIL": {
             newState.error = action.error
+            break;
         }
     }
     return  {...newState}

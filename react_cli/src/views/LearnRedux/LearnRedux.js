@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { createStore } from 'redux'
-import reducer from '../../reducers/reducer1'
+import {counter} from '../../reducers/SagaReducer'
 import style from './LearnRedux.scss'
 // import { one, two } from './Test'
 
-const store = createStore(reducer)
+// 使用Redux来简单实现dispatch发送与view更新
+const store = createStore(counter)
 
 export default class LearnRedux extends React.Component {
 

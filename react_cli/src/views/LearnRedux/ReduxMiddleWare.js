@@ -4,7 +4,6 @@ import style from './ReduxMiddleWare.scss';
 
 import { applyMiddleware, createStore } from 'redux';
 import createLogger from 'redux-logger'
-import reducer from '../../reducers/reducer1'
 // 引入connect函数
 import { connect } from 'react-redux'
 import Header from '../../components/Header'
@@ -103,7 +102,7 @@ class ReduxMiddleWare extends React.Component {
     render() {
 
         const { reducer } = this.props
-        console.log('reducer is:', this.props, "|||", this.state);
+        console.log('props:', this.props);
 
         return (
             <div className={style.ReduxMiddleWare}>
@@ -120,7 +119,7 @@ class ReduxMiddleWare extends React.Component {
                 </div>
                 <div className={style.gap}>
                     <button onClick={this.testSaga}>Saga</button>
-                    <span>{this.props.reduver1.userName}</span>
+                    <span>{this.props.sagaReucer.userName}</span>
                 </div>
 
 
@@ -132,7 +131,8 @@ class ReduxMiddleWare extends React.Component {
 // 对reducers中的函数进行关联
 const mapStateToProps = state => ({
     reducer: state.middle,
-    reduver1:state.reduver1
+    sagaReucer:state.sagaReucer,
+    Axios: state.Axios,
 });
 
 export default connect(mapStateToProps)(ReduxMiddleWare)

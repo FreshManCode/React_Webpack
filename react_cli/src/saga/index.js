@@ -15,7 +15,7 @@ export function axiosSuccessPOST(data) {
 
 export function* fetchUser() {
     console.log('fetchUser');
-    yield delay(1000);
+    yield delay(500);
     yield put({ type: 'GET_USER' })
 }
 
@@ -34,8 +34,7 @@ export function* fetchMockUserList() {
 
 export function* axiosRequest() {
     yield put({type:OPENPAGELOADING})
-    // const result = yield put({type:"AXIOS_REQUEST_INIT"})
-    // console.log('result is:',result)
+    // 使用redux-saga 来进行网络异步请求
     try {
         const response = yield call(fetch,AxiosURL)
         const json = yield call([response,response.json])
@@ -45,7 +44,6 @@ export function* axiosRequest() {
     } catch (error) {
         yield put({type:CLOSEPAGELOADING})
         yield put({type:"AXIOS_REQUEST_FAIL",error})
-        
     }
     
     // yield put({type:CLOSEPAGELOADING})

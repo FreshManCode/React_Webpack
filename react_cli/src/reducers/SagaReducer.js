@@ -1,14 +1,12 @@
-import { takeEvery } from 'redux-saga'
-import { fetchUser } from '../saga/index'
 //Action Creator
 const increaseAction = { type: 'increase' }
 const initialState = {
     userName: ''
 }
 
-export default (state = initialState, action) => {
+const sagaReducer = (state = initialState, action) => {
     let newState = state;
-    console.log('action is:',action);
+    console.log('reducer1 action is:',action);
     switch (action.type) {
         case 'GET_USER':
             newState.userName = "GET_USER_GET_USER"
@@ -27,9 +25,11 @@ export default (state = initialState, action) => {
     return { ...newState }
 }
 
+export default sagaReducer;
 
 //定义ReduxMiddleWare 组件的Reducer
 export function counter(state = { count: 0 }, action) {
+    console.log('reducer2 action is:',action);
     const count = state.count
     switch (action.type) {
         case 'increase':
