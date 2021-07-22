@@ -17,10 +17,12 @@ import ReduxMiddleWare from '../views/LearnRedux/ReduxMiddleWare'
 import MyLearn from '../views/Learn/Learn'
 import XMLHTTP from '../views/Network/XMLHTTP'
 import Axios from '../views/Network/Axios/Axios'
+import Ajax from '../views/Network/Ajax/Ajax'
 
 import { Menus } from '../utils/data'
 import { Spin } from 'antd'
 import MyFooter from '../components/Footer'
+import ReactHook from '../views/ReactHook'
 
 
 import store from '../store/createStore'
@@ -66,6 +68,9 @@ class AppLayout extends React.Component {
                                         <Route path='/ReduxMiddleWare' component={ReduxMiddleWare}></Route>
                                         <Route path='/XMLHttp' component={XMLHTTP}></Route>
                                         <Route path='/Axios' component={Axios}></Route>
+                                        <Route path='/Ajax' component={Ajax}></Route>
+                                        <Route path='/ReactHook' component={ReactHook}></Route>
+                                        {/* <Route path='/ReactAppContext' component={ReactAppContext}></Route> */}
                                         
                                         <Route path="/404" component={NotFund}></Route>
                                     </Content>

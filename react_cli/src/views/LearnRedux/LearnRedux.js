@@ -6,6 +6,7 @@ import style from './LearnRedux.scss'
 // import { one, two } from './Test'
 
 // 使用Redux来简单实现dispatch发送与view更新
+// 1.创建store
 const store = createStore(counter)
 
 export default class LearnRedux extends React.Component {
@@ -17,7 +18,7 @@ export default class LearnRedux extends React.Component {
         }
         this.incrementAsync = this.incrementAsync.bind(this)
         this.incrementIfOdd = this.incrementIfOdd.bind(this)
-        // 添加监听
+        //2. 添加监听
         store.subscribe(() => {
             this.setState({
                 clickTimes: store.getState()
@@ -57,6 +58,7 @@ export default class LearnRedux extends React.Component {
         }
     }
 
+    // 3.view触发action操作
     onIncrement = () => {
         console.log('onIncrement');
         // 发送action
