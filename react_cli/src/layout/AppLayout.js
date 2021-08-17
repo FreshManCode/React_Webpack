@@ -23,6 +23,9 @@ import { Menus } from '../utils/data'
 import { Spin } from 'antd'
 import MyFooter from '../components/Footer'
 import ReactHook from '../views/ReactHook'
+import SendSMS from '../views/Learn/SendSMS'
+import NewSendSMS from '../views/Learn/NewSendSMS'
+import JSFunction from '../views/JS/JSFunction'
 
 
 import store from '../store/createStore'
@@ -42,7 +45,7 @@ class AppLayout extends React.Component {
             <Spin spinning={this.props.isMyLoading} wrapperClassName="page-loading">
                 <div className='App'>
                     <BrowserRouter>
-                        <Layout style={{ width: '100vw', height: '100%', flex: 1 }}>
+                        <Layout style={{ width: '100%', height: '100%', flex: 1, left: '0', right: '0' }}>
                             <Header className="header" style={{ display: 'flex', alignItems: 'center' }}>
                                 <Menu style={{ flex: 1 }} theme="dark" mode="horizontal">
                                     {
@@ -58,8 +61,8 @@ class AppLayout extends React.Component {
                             </Header>
                             <Layout>
                                 <Layout style={{ padding: '0 1px 1px' }}>
-
-                                    <Content className="site-layout-background" style={{ margin: 0, minHeight: 'calc(100% - 24px)' }}>
+                                    {/* <Route path="/" component={Home}></Route> */}
+                                    <Content className="site-layout-background" style={{ margin: 0, minHeight: '100%' }}>
                                         <Route path="/Home" component={Home}></Route>
                                         <Route path="/About" component={About}></Route>
                                         <Route path="/LearnRedux" component={LearnRedux}></Route>
@@ -70,8 +73,13 @@ class AppLayout extends React.Component {
                                         <Route path='/Axios' component={Axios}></Route>
                                         <Route path='/Ajax' component={Ajax}></Route>
                                         <Route path='/ReactHook' component={ReactHook}></Route>
+                                        <Route path='/SendSMS' component={SendSMS}></Route>
+                                        <Route path='/NewSendSMS' component={NewSendSMS}></Route>
+                                        <Route path='/JSFunction' component={JSFunction}></Route>
+
+
                                         {/* <Route path='/ReactAppContext' component={ReactAppContext}></Route> */}
-                                        
+
                                         <Route path="/404" component={NotFund}></Route>
                                     </Content>
 

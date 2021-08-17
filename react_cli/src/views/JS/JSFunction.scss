@@ -1,0 +1,24 @@
+.jsFunction {
+    padding: 20px;
+    display: flex;
+    // 设置主轴为交叉轴
+    flex-direction: column;
+    // 主轴对齐方式 (此时主轴为垂直方向,居中)
+    justify-content: center;
+    // 水平居中 (交叉轴对齐方式,也就是水平方向)
+    align-items: center;
+
+    .button {
+        width: 70%;
+        margin-top: 10px;
+
+    }
+
+    min-height: 400px;
+}
+
+.testForm {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}

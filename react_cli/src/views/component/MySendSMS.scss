@@ -1,0 +1,23 @@
+.sendsms {
+    margin-left: 10px;
+
+    .send {
+        width: 100%;
+        background: #E1F2FF;
+        border-radius: 3px;
+        box-shadow: none !important;
+        color: #1989FA;
+        font-size: 12px;
+        &:hover {
+            color: #1989FA !important;
+        }
+    }
+
+    .count {
+        width: auto !important;
+        position: absolute;
+        white-space: normal;
+        padding: 0;
+        font-size: 12px;
+    }
+}

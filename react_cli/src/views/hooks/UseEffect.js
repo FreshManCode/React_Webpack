@@ -17,7 +17,7 @@ import { Spin } from 'antd'
  */
 
 export default function MyPerson(props) {
-    
+
     const { personId = 1 } = props;
     const URL = `https://swapi.co/api/people/${personId}`
     // const URL = `https://www.baidu.com`
@@ -29,7 +29,7 @@ export default function MyPerson(props) {
         fetch(URL)
             .then(res => res.json())
             .then(data => {
-                console.log('data is:',data);
+                console.log('data is:', data);
                 setPerson(data);
                 setLoading(false);
             });

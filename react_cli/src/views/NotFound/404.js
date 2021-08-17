@@ -9,4 +9,6 @@ export default class NotFund extends React.Component {
             <p>资源不存在哦</p>
         </div>
     }
+
+   
 }

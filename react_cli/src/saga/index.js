@@ -69,5 +69,6 @@ export default function* rootSaga() {
     // 添加异步的观察通知,当有 'TEST_FETECHUSER'Type 发送时会调用fetchUser saga函数
     yield takeEvery('TEST_FETECHUSER', fetchUser)
     yield takeEvery('TEST_FETECHPROJECT', fetchProject)
+    // 添加异步的观察通知,当有 'AXIOS_REQUEST'Type 发送时会调用axiosRequest saga函数
     yield takeEvery('AXIOS_REQUEST', axiosRequest)
 }

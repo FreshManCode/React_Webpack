@@ -14,6 +14,9 @@ export const HomeItems = [
     { name: "useContext()：共享状态钩子", path: "/ReactHook", key: "useContext", query: { myHook: 'useContext' } },
     { name: "useReducer()：action 钩子", path: "/ReactHook", key: "useReducer", query: { myHook: 'useReducer' } },
     { name: "useEffect()：副作用钩子", path: "/ReactHook", key: "useEffect", query: { myHook: 'useEffect' } },
+    { name: "使用useContext()倒计时模块", path: "/SendSMS", key: "sendSMS", query: { myHook: 'sendSMS' } },
+    { name: "使用子组件全功能倒计时模块", path: "/NewSendSMS", key: "NewSendSMS", query: { myHook: 'NewSendSMS' } },
+    { name: "JS函数学习", path: "/JSFunction", key: "JSFunction", query: { myHook: 'JSFunction' } },
 ];
 
 /**

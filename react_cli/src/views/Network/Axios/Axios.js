@@ -39,6 +39,8 @@ class Axios extends React.Component {
         if (!this.state.loadComponent) {
             return null
         }
+        const {Axios} = this.props
+        console.log("Axios result is:", Axios)
         const data = _.get(this.props, 'Axios.res.result')
         return (
 
